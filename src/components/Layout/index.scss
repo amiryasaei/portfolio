@@ -34,6 +34,70 @@
     margin: 0 auto;
     z-index: 1;
     transform-style: preserve-3d;
-    animation: fadeIn 1s forwards;
-    animation-delay: 1s;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.about-me{
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 20%;
+        transform: translateY(-50%);
+        width: 35%;
+        vertical-align: middle;
+        display: table-cell;
+        max-height: 3000px;
+
+        h1{
+            font-size: 53px;
+            font-family: 'Coolvetica';
+            color: #ffd700;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+        }
+
+        p{
+            font-size: 17px;
+            color:#ffff;
+            font-family:  sans-serif;
+            font-weight: 300;
+            min-width: fit-content;
+        }
+    }
+}
+
+.contact-me{
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35%;
+        vertical-align: middle;
+        display: table-cell;
+        max-height: 90%;
+
+        h1{
+            font-size: 53px;
+            font-family: 'Coolvetica';
+            color: #ffd700;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+        }
+
+        p{
+            font-size: 17px;
+            color:#ffff;
+            font-family:  sans-serif;
+            font-weight: 300;
+            min-width: fit-content;
+        }
+    }
 }
