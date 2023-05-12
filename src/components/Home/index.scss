@@ -45,11 +45,12 @@
         }
     }
     .my-image{
-        width:400px;
-        position: absolute;
-        margin-left: 1180px;
-        margin-top: 10px;
+        width:350px;
+        position: fixed;
+        margin-left: 1150px;
+        margin-top: 20px;
         border-radius:50%;
+        object-fit: cover;
     }
     .about-me{
         color: #ffd700;
