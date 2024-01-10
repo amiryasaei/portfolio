@@ -1,14 +1,14 @@
 import './index.scss';
-import Sidebar from '../Sidebar'; 
+import { NavBar } from '../NavBar/index.js'; 
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 
 const Layout = () => {
     return (
         <div className="App">
-            <Sidebar />
-            <div className='page'><Outlet /></div>
-        </div>    
+            <NavBar />
+            <div className='page'><Outlet /></div> 
+        </div>
      
     )
 }
