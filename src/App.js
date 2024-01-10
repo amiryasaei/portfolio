@@ -4,9 +4,11 @@ import About from './components/About'
 import './App.scss';
 import { Route, Routes } from 'react-router-dom';
 import Contact from './components/Contact';
-import videoBg from './assets/video/videoBg.mp4';
+import bgImage from './assets/images/bgImage.jpg';
+
 
 function App() {
+
   return (
     <>
     <Routes>
@@ -16,7 +18,8 @@ function App() {
         <Route path='contact' element={<Contact />}></Route>
       </Route>
     </Routes>
-    <video className="video-background" src='videoBg' autoPlay muted loop/>
+
+    <img className="video-background" src={bgImage} alt='bg'/>
     </>
   )
 }
