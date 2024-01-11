@@ -1,58 +1,132 @@
-.home-page{
-    .text-zone{
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        max-height: 90%;
-    }
+.homePage{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.headerBlock{
+    width: 100%;
+    height: 69%;
+    background: #0a071f;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    text-align: center;
     h1{
-        color: #fff;
-        font-size: 53px;
-        margin:0;
-        font-family: 'Coolvetica';
-        font-weight: 400;
-        letter-spacing: 2px;
-    }
-
-    h2{
-        color: #e0dede;
-        margin-top: 20px;
-        font-weight: 400;
-        font-size: 15px;
-        font-family: sans-serif;
-        letter-spacing: 2.5px;
-        animation: fadeIn 1s 1.8s backwards;
-    }
-
-    .flat-button{
-        color:#ffd700;
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: 4px;
-        font-family: sans-serif;
-        text-decoration: none;
-        padding: 1px 18px;
-        border: 1px solid #ffd700;
-        margin-top: 25px;
-        float: left;
-        animation: fadeIn 1s 1.8s backwards;
-        white-space: nowrap;
-
-        &:hover {
-            background: #ffd700;
-            color: #424242;
-        }
-    }
-    .my-image{
-        width:350px;
-        position: fixed;
-        margin-left: 1150px;
-        margin-top: 20px;
-        border-radius:50%;
-        object-fit: cover;
-    }
-    .about-me{
-        color: #ffd700;
+        margin-top: 30px;
+        font-family: 'Noto Serif', sans-serif;
+        color: white;
+        font-size: 25px;
     }
 }
+.context{
+    margin-top: 30px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 18px;
+}
+.mainBody{
+    width: 1100px;
+    background-color: rgb(243, 243, 243); 
+    display: flex;
+    flex-direction: column; 
+    margin-top: 60px;
+}
+
+.myImage{
+    width:250px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+.headerBlock{
+    width: 100%;
+    height: 69%;
+    margin-top: -1px;
+    background: #0a071f;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.myImage{
+    margin-top: -50px;
+    width:250px;
+    border-radius:50%;
+    object-fit: cover;
+}
+.title{
+    text-align: center;
+    h1{
+        margin-top: 30px;
+        font-family: 'Noto Serif', sans-serif;
+        color: white;
+        font-size: 20px;
+    }
+}
+.context{
+    margin-top: 30px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+}
+// .home-page{
+//     .text-zone{
+//         position: absolute;
+//         left: 10%;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         max-height: 90%;
+//     }
+//     h1{
+//         color: #fff;
+//         font-size: 53px;
+//         margin:0;
+//         font-family: 'Coolvetica';
+//         font-weight: 400;
+//         letter-spacing: 2px;
+//     }
+
+//     h2{
+//         color: #e0dede;
+//         margin-top: 20px;
+//         font-weight: 400;
+//         font-size: 15px;
+//         font-family: sans-serif;
+//         letter-spacing: 2.5px;
+//         animation: fadeIn 1s 1.8s backwards;
+//     }
+
+//     .flat-button{
+//         color:#ffd700;
+//         font-size: 13px;
+//         font-weight: 400;
+//         letter-spacing: 4px;
+//         font-family: sans-serif;
+//         text-decoration: none;
+//         padding: 1px 18px;
+//         border: 1px solid #ffd700;
+//         margin-top: 25px;
+//         float: left;
+//         animation: fadeIn 1s 1.8s backwards;
+//         white-space: nowrap;
+
+//         &:hover {
+//             background: #ffd700;
+//             color: #424242;
+//         }
+//     }
+
+//     .about-me{
+//         color: #ffd700;
+//     }
+// }
