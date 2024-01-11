@@ -9,12 +9,12 @@
 }
 
 .optionWrapper{
-    margin-right: 80px;
+    margin-right: 50px;
     display:flex;
     justify-content: right;
-    gap: 100px;
+    gap: 30px;
         a{
-            font-size:22px;
+            font-size:20px;
             color: white;
             display: block;
             line-height: 51px;
@@ -40,7 +40,7 @@
 .nameLogo{
     display: flex;
     justify-content: left;
-    margin-left: 80px;
+    margin-left: 50px;
     align-items: center;
     font-family: 'Segoe UI';
     font-size: 20px;
@@ -48,4 +48,77 @@
     color: white;
     font-weight: 400;
     text-shadow: 2px 2px #fff;
+}
+
+.activeLinkContainer{
+    color: #ffd700;
+}
+
+.linkContainer{
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+
+.nameLogo{
+    display: flex;
+    justify-content: left;
+    margin-left: 30px;
+    align-items: center;
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: white;
+    font-weight: 400;
+    text-shadow: 2px 2px #fff;
+}
+
+.mobileNavBar{
+    display: flex;
+    justify-content: space-between;
+    background: #1F1F2C;
+    width: 100%;
+    max-width: 1000px;
+    height: 60px;
+}
+
+.menuButton{
+    margin-right: 30px;
+    background: #1f1f2c;
+    border-style: solid;
+    border-color: #1F1F2C;
+}
+
+.mobileMenu{
+    background-color: #1F1F2C;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 120000;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.topBar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkEnteries{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+    font-size: 20px;
+    gap: 20px;
+}
+.activeLinkContainer{
+    color: #ffd700;
+}
 }
