@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-import Loader from 'react-loaders'
 import './index.scss'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
@@ -22,7 +20,7 @@ const Contact = () => {
                 window.location.reload(false)
             },
             (error) => {
-                alert('Failed to send the message, please try again')
+                alert('Failed to send the message! Please try again')
             }
         )
     }

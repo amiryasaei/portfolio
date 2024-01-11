@@ -1,7 +1,6 @@
 import './index.scss';
 import Picture from '../../assets/images/myPic.jpg';
 import { useIsMobile } from '../../utils/isMobile';
-import {Link} from 'react-router-dom'
 const Home = () => {
   const {isMobile} = useIsMobile();
 
