@@ -32,11 +32,11 @@ export const NavBar = () => {
             <Link to={'./'} onClick={()=> setMenuBarClicked(false)}>
               <div className={clsx(location.pathname==='/'?'activeLinkContainer':'linkContainer')}>Home</div>
             </Link>
-            <Link to={'/about'} onClick={()=> setMenuBarClicked(false)}>
-              <div className={clsx(location.pathname==='/about'?'activeLinkContainer':'linkContainer')}>About</div>
-            </Link>
+            {/* <Link to={'/Projects'} onClick={()=> setMenuBarClicked(false)}>
+              <div className={clsx(location.pathname==='/Projects'?'activeLinkContainer':'linkContainer')}>Projects</div>
+            </Link> */}
             <Link to={'/Contact'} onClick={()=> setMenuBarClicked(false)}>
-              <div className={clsx(location.pathname==='/contact'?'activeLinkContainer':'linkContainer')}>Contact Me</div>
+              <div className={clsx(location.pathname==='/Contact'?'activeLinkContainer':'linkContainer')}>Contact Me</div>
             </Link>
           </div>
         </div>
@@ -47,11 +47,11 @@ export const NavBar = () => {
           <Link to={'./'} onClick={()=> setMenuBarClicked(false)}>
               <div className={clsx(location.pathname==='/'?'activeLinkContainer':'linkContainer')}>Home</div>
             </Link>
-            <Link to={'/about'} onClick={()=> setMenuBarClicked(false)}>
-              <div className={clsx(location.pathname==='/about'?'activeLinkContainer':'linkContainer')}>About</div>
-            </Link>
+            {/* <Link to={'/Projects'} onClick={()=> setMenuBarClicked(false)}>
+              <div className={clsx(location.pathname==='/Projects'?'activeLinkContainer':'linkContainer')}>Projects</div>
+            </Link> */}
             <Link to={'/Contact'} onClick={()=> setMenuBarClicked(false)}>
-              <div className={clsx(location.pathname==='/contact'?'activeLinkContainer':'linkContainer')}>Contact Me</div>
+              <div className={clsx(location.pathname==='/Contact'?'activeLinkContainer':'linkContainer')}>Contact Me</div>
             </Link>
           </div>
         </div>
