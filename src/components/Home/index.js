@@ -21,6 +21,12 @@ const Home = () => {
           </div>
         </div>
         <div className='footerBlock'>
+          <div className='footerTitle'>
+            Dad joke of the day...
+          </div>
+          <div className='footerContext'>
+            Why did the belt go to prison? He held up a pair of pants!
+          </div>
         </div>
       </>
       :
@@ -38,6 +44,12 @@ const Home = () => {
           </div>
         </div>
         <div className='footerBlock'>
+          <div className='footerTitle'>
+            Dad joke of the day...
+          </div>
+          <div className='footerContext'>
+            Why did the belt go to prison? He held up a pair of pants!
+          </div>
         </div>
       </>
       }
