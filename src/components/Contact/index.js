@@ -1,10 +1,14 @@
 import './index.scss'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import pdfIcon from '../../assets/images/pdfIcon.svg';
 import resume from '../../assets/resume.pdf';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 const Contact = () => {
+    const recaptcha = useRef(); 
     const refForm = useRef()
+    const [capValue, setCapValue] = useState();
     const sendEmail = (e) =>{
         e.preventDefault();
 
@@ -17,7 +21,7 @@ const Contact = () => {
         .then(
             (result) => {
                 alert('Message successfully sent!')
-                window.location.reload(false)
+                window.location.reload(true)
             },
             (error) => {
                 alert('Failed to send the message! Please try again')
@@ -55,7 +59,8 @@ const Contact = () => {
                     <textarea placeholder="Message" name="message" required></textarea>
                   </li>
                   <li>
-                    <input type="submit" className="flat-button" value="SEND" />
+                    <ReCAPTCHA onChange={(val) => setCapValue(val)} sitekey={process.env.REACT_APP_SITE_KEY_RECAPTCHA} ref={recaptcha} ></ReCAPTCHA>
+                    <input disabled={!capValue} type="submit" className="flat-button" value="SEND" />
                   </li>
                 </ul>
               </form>
