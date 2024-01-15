@@ -36,7 +36,7 @@ const Contact = () => {
               <p>
                 Thanks for visiting my website. I will be looking forward to hear
                 from you either about job opportunities or regarding any question
-                or inquiries. Please contact me through my Linkdin or via the form below.
+                or inquiries. Please contact me through my Linkedin or via the form below.
               </p>
             </div>
             <div className="contact-form">
