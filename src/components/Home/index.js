@@ -9,39 +9,35 @@ const Home = () => {
   const [joke, setJoke] = useState('');
 
   useEffect(() => {
-    const lastApiCallTimestamp = localStorage.getItem('lastApiCallTimestamp');
-    const currentTimestamp = new Date().getTime();
-    const twentyFourHoursInMs = 24 * 60 * 60 * 1000;
+    // Function to fetch the joke from the API
+    const fetchJoke = async () => {
+      try {
+        const response = await axios.get('https://icanhazdadjoke.com/', {
+          headers: {
+            'Accept': 'text/plain',
+          },
+        });
+        const jokeText = response.data;
+        setJoke(jokeText);
+        localStorage.setItem('cachedJoke', jokeText);
+        localStorage.setItem('lastApiCallTimestamp', new Date().getTime());
+      } catch (error) {
+        console.error('Error fetching joke:', error);
+      }
+    };
 
-    if (
-      !lastApiCallTimestamp ||
-      currentTimestamp - lastApiCallTimestamp > twentyFourHoursInMs
-    ) {
-      fetchJoke(currentTimestamp);
+    // Check if 24 hours have passed since the last API call
+    const lastApiCallTimestamp = parseInt(localStorage.getItem('lastApiCallTimestamp'), 10);
+    const currentTimestamp = new Date().getTime();
+    const twentyFourHoursInMs = 24*60*60*1000;
+
+    if (isNaN(lastApiCallTimestamp) || currentTimestamp - lastApiCallTimestamp > twentyFourHoursInMs) {
+      fetchJoke();
     } else {
       const cachedJoke = localStorage.getItem('cachedJoke');
       setJoke(cachedJoke);
     }
   }, []);
-
-  const fetchJoke = async (currentTimestamp) => {
-    try {
-      const response = await axios.get('https://icanhazdadjoke.com/', {
-        headers: {
-          Accept: 'text/plain',
-        },
-      });
-      if (!response.ok) {
-        throw new Error('Failed to fetch joke');
-      }
-      const jokeText = await response.data();
-      setJoke(jokeText);
-      localStorage.setItem('cachedJoke', jokeText);
-      localStorage.setItem('lastApiCallTimestamp', currentTimestamp);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   return (
     <div className="homePage">
