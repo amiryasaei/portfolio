@@ -6,9 +6,11 @@ import resume from '../../assets/resume.pdf';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
+    
     const recaptcha = useRef(); 
     const refForm = useRef()
     const [capValue, setCapValue] = useState();
+
     const sendEmail = (e) =>{
         e.preventDefault();
 

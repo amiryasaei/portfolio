@@ -1,8 +1,47 @@
 import './index.scss';
 import Picture from '../../assets/images/myPic.jpg';
 import { useIsMobile } from '../../utils/isMobile';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 const Home = () => {
   const {isMobile} = useIsMobile();
+
+  const [joke, setJoke] = useState('');
+
+  useEffect(() => {
+    const lastApiCallTimestamp = localStorage.getItem('lastApiCallTimestamp');
+    const currentTimestamp = new Date().getTime();
+    const twentyFourHoursInMs = 24 * 60 * 60 * 1000;
+
+    if (
+      !lastApiCallTimestamp ||
+      currentTimestamp - lastApiCallTimestamp > twentyFourHoursInMs
+    ) {
+      fetchJoke(currentTimestamp);
+    } else {
+      const cachedJoke = localStorage.getItem('cachedJoke');
+      setJoke(cachedJoke);
+    }
+  }, []);
+
+  const fetchJoke = async (currentTimestamp) => {
+    try {
+      const response = await axios.get('https://icanhazdadjoke.com/', {
+        headers: {
+          Accept: 'text/plain',
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch joke');
+      }
+      const jokeText = await response.data();
+      setJoke(jokeText);
+      localStorage.setItem('cachedJoke', jokeText);
+      localStorage.setItem('lastApiCallTimestamp', currentTimestamp);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="homePage">
@@ -25,7 +64,7 @@ const Home = () => {
             Dad joke of the day...
           </div>
           <div className='footerContext'>
-            Why did the belt go to prison? He held up a pair of pants!
+            {joke}
           </div>
         </div>
       </>
@@ -48,7 +87,7 @@ const Home = () => {
             Dad joke of the day...
           </div>
           <div className='footerContext'>
-            Why did the belt go to prison? He held up a pair of pants!
+            {joke}
           </div>
         </div>
       </>
