@@ -71,7 +71,7 @@ const Contact = () => {
         </div>
         <div className='footer'>
           You can also download my CV from below!
-          <a href={resume} download><img className="pdfImage"src={pdfIcon} alt='pdfIcon'/></a>
+          <a href={resume} download={resume}><img className="pdfImage"src={pdfIcon} alt='pdfIcon'/></a>
         </div>
       </div>
     </>
